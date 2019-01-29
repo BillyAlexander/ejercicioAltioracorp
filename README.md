@@ -15,3 +15,6 @@ prácticas empleadas, la arquitectura planteada, las herramientas escogidas, etc
 
 
 La aplicación debe gestionar un listado de Clientes, cada uno con Órdenes compuestas de Artículos. Para el Cliente, interesa registrar su nombre y apellido; para una Orden, su fecha y sus Artículos. Y para cada Artículo, un código, un nombre y un precio unitario. Para todas las Entidades, debe existir una pantalla correspondiente para crear instancias de la Entidad; sin embargo, solo para una de ellas, esa pantalla debe permitir modificar y eliminar además de crear (es suficiente un solo ejemplo de CRUD completo). Interesa principalmente la implementación de la lógica; no es necesario poner demasiado esfuerzo en asuntos visuales o de diseño gráfico.
+
+#Entidad-Relación:
+https://drive.google.com/file/d/1hkcsGlm7HAhulTaAfAws91GM04FaEKd6/view?usp=sharing
