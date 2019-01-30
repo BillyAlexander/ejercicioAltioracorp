@@ -19,7 +19,7 @@ public class BaseEntity {
 	protected Date creationDate = new Date();
 
 	@Column(name = "status", nullable = false)
-	protected int status = 1;
+	protected Boolean status = true;
 
 	@Column(name = "update_date")
 	protected Date updateDate;
@@ -41,11 +41,11 @@ public class BaseEntity {
 		this.creationDate = creationDate;
 	}
 
-	public int getStatus() {
+	public Boolean getStatus() {
 		return status;
 	}
 
-	public void setStatus(int status) {
+	public void setStatus(Boolean status) {
 		this.status = status;
 	}
 
