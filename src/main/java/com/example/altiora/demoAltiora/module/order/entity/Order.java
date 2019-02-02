@@ -10,16 +10,17 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import com.example.altiora.demoAltiora.module.client.entity.Client;
 import com.example.altiora.demoAltiora.module.item.entity.Item;
 import com.example.altiora.demoAltiora.util.base.entity.BaseEntity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "orden")
@@ -28,8 +29,13 @@ public class Order extends BaseEntity {
 	@Column(name = "dateOrder", nullable = false)
 	private Date dateOrder;
 
-	@JsonManagedReference("OrderItem")
+	/*@JsonManagedReference("OrderItem")
 	@OneToMany(mappedBy = "order", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Item> items = new ArrayList<>();*/
+	
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.DETACH)
+	@JoinTable(name = "order_item", joinColumns = @JoinColumn(name = "orden", foreignKey = @ForeignKey(name = "item_order_fk")), inverseJoinColumns = @JoinColumn(name = "item", foreignKey = @ForeignKey(name = "order_item_fk")), uniqueConstraints = {
+			@UniqueConstraint(name = "order_item_uk", columnNames = { "orden", "item" }) })
 	private List<Item> items = new ArrayList<>();
 	
 	@JsonBackReference("ClientOrder")

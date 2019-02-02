@@ -1,5 +1,8 @@
 package com.example.altiora.demoAltiora.module.client.service;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -27,7 +30,12 @@ public class ClientService extends BaseService<Client> {
 	}
 	
 	public Client save(Client newClient) {
-		Client client = clientRepo.save(newClient);
+		if(newClient.getId()!=0)
+		{
+			Calendar sameDate = new GregorianCalendar();
+			newClient.setUpdateDate(sameDate.getTime());
+		}
+		Client client = clientRepo.save(newClient);	
 		return client;
 	}
 	
@@ -38,4 +46,10 @@ public class ClientService extends BaseService<Client> {
 		}
 	}
 	
+	public void deleteClientById(int id) throws ServletException {
+		Client client = clientRepo.getOne(id);
+		if(client != null) {
+			clientRepo.deleteById(id);
+		}
+	}
 }
