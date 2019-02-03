@@ -16,6 +16,9 @@ prácticas empleadas, la arquitectura planteada, las herramientas escogidas, etc
 
 La aplicación debe gestionar un listado de Clientes, cada uno con Órdenes compuestas de Artículos. Para el Cliente, interesa registrar su nombre y apellido; para una Orden, su fecha y sus Artículos. Y para cada Artículo, un código, un nombre y un precio unitario. Para todas las Entidades, debe existir una pantalla correspondiente para crear instancias de la Entidad; sin embargo, solo para una de ellas, esa pantalla debe permitir modificar y eliminar además de crear (es suficiente un solo ejemplo de CRUD completo). Interesa principalmente la implementación de la lógica; no es necesario poner demasiado esfuerzo en asuntos visuales o de diseño gráfico.
 
+# Breve descripciòn
+https://www.youtube.com/watch?v=J6O8YMfK7vQ
+
 # Entidad-Relación:
 https://drive.google.com/file/d/1hkcsGlm7HAhulTaAfAws91GM04FaEKd6/view?usp=sharing
 
@@ -24,3 +27,10 @@ https://drive.google.com/file/d/1D5aTimmLGnW4zQbPbQT0lx0ar9Osaud8/view?usp=shari
 
 # Front
 git@github.com:BillyAlexander/altioraCortpFront.git
+
+# add artículos
+USE ALTIORA;
+INSERT INTO ITEM(CREATION_DATE,STATUS,NAME_ITEM,PRICE_ITEM) VALUES ('2019-02-01 10:01:59',1,'ARTICULO 1',100);
+INSERT INTO ITEM(CREATION_DATE,STATUS,NAME_ITEM,PRICE_ITEM) VALUES ('2019-02-01 10:01:59',1,'ARTICULO 2',200);
+INSERT INTO ITEM(CREATION_DATE,STATUS,NAME_ITEM,PRICE_ITEM) VALUES ('2019-02-01 10:01:59',1,'ARTICULO 3',300);
+INSERT INTO ITEM(CREATION_DATE,STATUS,NAME_ITEM,PRICE_ITEM) VALUES ('2019-02-01 10:01:59',1,'ARTICULO 4',400);
